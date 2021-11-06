@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<title>Select All</title>
+</head>
+<body>
+
+<script language="javascript">
+$(document).ready(function () {
+    $('#all').click(function () {    
+        $(':checkbox.checkItem').prop('checked', this.checked);
+        if (this.checked) {
+            $(this).siblings('label').html('Uncheck All');
+        } else {
+            $(this).siblings('label').html('Check All');
+        }
+    });
+});
+</script>
+<form>
+    
+    <input type="checkbox" id="all">
+    <label for="all">Check All</label>
+    <br>
+    <input type="checkbox" class="checkItem"> Item 1
+    <br>
+    <input type="checkbox" class="checkItem"> Item 2 
+    <br>
+    <input type="checkbox" class="checkItem"> Item 3
+</form>
+
+
+</body>
+</html>

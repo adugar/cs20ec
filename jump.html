@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<title>Select All</title>
+</head>
+<body>
+
+<script language="javascript">
+$(document).ready(function () {
+    right = false
+    $('#submit').click(function () {    
+        if (right) {
+            $(this).val('JUMP >');
+            val = $('input[name=right]').val();;
+            $('#leftBox').val(val);
+            $('#rightBox').val("");
+            right = false;
+        }
+        else {
+            $(this).val('< JUMP');
+            val = $('input[name=left]').val();;
+            $('#rightBox').val(val);
+            $('#leftBox').val("");
+            right = true;
+        }
+        return false;
+    });
+});
+</script>
+<form>
+    <div style="width: 100px; float:left; height:100px;margin-right:30px;">
+        <input type='text' name='left' id='leftBox'>
+    </div>
+    <input style="width: 100px; float:left; height:100px; margin-left:30px;" id="submit" type='submit' value ="JUMP >">
+    <div style="width: 100px; float:left; height:100px; margin-left:30px;" id='right-box' name='right-box'>
+        <input type='text' name='right' id='rightBox'>
+    </div>
+</form>
+</body>
+</html>
